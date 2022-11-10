@@ -1,5 +1,7 @@
 import sprite from './../../images/sprite.svg'
 import avatar from './../../images/avatar.png'
+import Star from '../Star/Star'
+import { NavLink } from 'react-router-dom'
 
 const getDaysPassed = (postedDate) => {
   const endDate = Date.now() / 1000 / 24 / 60 / 60
@@ -28,21 +30,11 @@ const Card = ({ tasks }) => {
             <div className="right  pt-17px ">
               <div className="top flex justify-between items-baseline mb-17px">
                 <div className="flex mr-90px">
-                  <svg className="w-2.5 h-2.5">
-                    <use href={`${sprite}#star`} />
-                  </svg>{' '}
-                  <svg className="w-2.5 h-2.5">
-                    <use href={`${sprite}#star`} />
-                  </svg>{' '}
-                  <svg className="w-2.5 h-2.5">
-                    <use href={`${sprite}#star`} />
-                  </svg>{' '}
-                  <svg className="w-2.5 h-2.5">
-                    <use href={`${sprite}#star`} />
-                  </svg>{' '}
-                  <svg className="w-2.5 h-2.5">
-                    <use href={`${sprite}#star`} />
-                  </svg>{' '}
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
                 </div>
                 <div className=" text-secondary text-sm">
                   Posted {getDaysPassed(task.createdAt)}
@@ -50,7 +42,7 @@ const Card = ({ tasks }) => {
                 </div>
               </div>
               <h1 className="font-normal text-18px leading-24px  text-left mb-5px">
-                {task.title}
+                <NavLink to={`${task.id}`}>{task.title}</NavLink>
               </h1>
               <p className="text-left text-base text-18px leading-25px text-secondary mb-7px">
                 {task.name} •{' '}
