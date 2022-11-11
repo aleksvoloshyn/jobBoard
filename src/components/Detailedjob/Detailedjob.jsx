@@ -53,10 +53,22 @@ const Detailedjob = () => {
           Job Details
         </h2>
         <hr className="text-hr opacity-10 mb-24px" />
+
         <ul className="userPanel flex mb-32px">
-          <li>Save to my list</li>
-          <li>Share</li>
+          <li className="flex mr-32px">
+            <svg className="starempty w-location h-location ">
+              <use href={`${sprite}#location`} />
+            </svg>{' '}
+            <p>Save to my list</p>
+          </li>
+          <li className="flex">
+            <svg className="share w-location h-location">
+              <use href={`${sprite}#share`} />
+            </svg>{' '}
+            <p>Share</p>
+          </li>
         </ul>
+
         <h3 className="text-24px font-bold leading-30px mb-5px">
           {details.title}{' '}
         </h3>
@@ -132,7 +144,7 @@ const Detailedjob = () => {
             return (
               <li
                 key={ind}
-                className=" ml-22px px-13px h-50px border-solid border rounded-lg bg-butBeniBg border-butBeniBrdr text-butBeniTxt flex justify-center items-center font-bold"
+                className=" mr-5px px-13px h-50px border-solid border rounded-lg bg-butBeniBg border-butBeniBrdr text-butBeniTxt flex justify-center items-center font-bold"
               >
                 {benefit}
               </li>
@@ -142,21 +154,25 @@ const Detailedjob = () => {
         <h4 className="text-28px mb-2.5 font-bold">Contacts</h4>
         <hr className="text-hr opacity-10 mb-22px" />
         {/* <img src={contactsMob} alt="contacts map" /> */}
-        <div className="w-mapMobile h-mapMobile rounded-lg m-auto ">
-          <div className="contacts h-contMobile text-geolocation bg-geolocationBg ]">
-            <p>Department name. {details.name}</p>
-            <svg className="w-location h-location mr-2">
-              <use href={`${sprite}#location`} />
-            </svg>
-            <p>{details.address}</p>
-            <p>{details.phone}</p>
+        <div className="w-mapMobile   m-auto ">
+          <div className="contacts h-contMobile text-geolocation bg-geolocationBg pt-32px pl-62px rounded-t-xl">
+            <p className="font-bold"> Department name.</p>{' '}
+            <p className="font-bold mb-17px"> {details.name}</p>
+            <span className="address flex mb-1.5">
+              <svg className="w-location h-location mr-2.5">
+                <use href={`${sprite}#location`} />
+              </svg>
+              <p>{details.address}</p>
+            </span>
+            <p className="mr-2.5">{details.phone}</p>
             <p>{details.email}</p>
           </div>
-          <div className="bg-geolocationBg">
+
+          <div className="bg-geolocationBg h-googleMobile rounded-b-xl">
             <img
-              src={`https://maps.googleapis.com/maps/api/staticmap?center=${geolocation.lat},${geolocation.long}&zoom=12&size=372x200&maptype=roadmap&key=AIzaSyASyHvDC7SCL7RencmuMJd68Zfz_InZYTw`}
+              src={`https://maps.googleapis.com/maps/api/staticmap?center=${geolocation.lat},${geolocation.long}&zoom=12&size=372x230&maptype=roadmap&key=AIzaSyASyHvDC7SCL7RencmuMJd68Zfz_InZYTw`}
               alt="location"
-              className="opacity-40"
+              className="opacity-20"
             />
           </div>
         </div>

@@ -45,7 +45,8 @@ module.exports = {
         location: '18px',
         button: '52px',
         mapMobile: '436px',
-        contMobile: '236px',
+        contMobile: '206px',
+        googleMobile: '230px',
         '50px': '50px',
       },
       backgroundColor: {
@@ -74,9 +75,11 @@ module.exports = {
         '17px': '17px',
         '24px': '24px',
         '27px': '27px',
+        '32px': '32px',
         '37px': '37px',
         '45px': '45px',
         '54px': '54px',
+        '62px': '62px',
       },
       margin: {
         '1px': '1px',

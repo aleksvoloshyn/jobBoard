@@ -32,8 +32,7 @@ const Card = ({ tasks }) => {
                   <Star />
                 </div>
                 <div className=" text-secondary text-sm">
-                  Posted {getDaysPassed(task.createdAt)}
-                  days ago
+                  Posted {getDaysPassed(task.createdAt)} days ago
                 </div>
               </div>
               <h1 className="font-normal text-18px leading-24px  text-left mb-5px">
