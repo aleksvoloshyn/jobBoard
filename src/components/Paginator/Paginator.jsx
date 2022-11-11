@@ -9,17 +9,17 @@ const Paginator = () => {
             page <= 5 && (
               <li
                 key={ind}
-                className="mr-4 text-16px leading-19px font-[700] text-pages"
+                className="mr-4 text-16px leading-19px font-[700] text-pages cursor-pointer"
               >
                 {page}
               </li>
             )
           )
         })}
-        <li className="mr-4 text-16px leading-19px font-[700] text-pages">
+        <li className="mr-4 text-16px leading-19px font-[700] text-pages ">
           ...
         </li>
-        <li className="mr-4 text-16px leading-19px font-[700] text-pages">
+        <li className="mr-4 text-16px leading-19px font-[700] text-pages cursor-pointer">
           {pages[pages.length - 1]}
         </li>
       </ul>

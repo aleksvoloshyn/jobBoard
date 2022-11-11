@@ -5,7 +5,13 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {},
-
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    },
     extend: {
       colors: {
         secondary: '#878D9D',
@@ -16,6 +22,12 @@ module.exports = {
         detPrText: '#3A4562',
         hr: '#3A4562',
         detSecText: '#38415D',
+        butEmplType: 'rgba(161, 177, 219, 0.317343)',
+        butEmplTypeTxt: '#55699E',
+        butEmplTypeBrdr: 'rgba(85, 105, 158, 0.3)',
+        butBeniBg: 'rgba(255, 207, 0, 0.15);',
+        butBeniTxt: '#988B49',
+        butBeniBrdr: '#FFCF00',
       },
       fontFamily: {
         sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
@@ -25,6 +37,7 @@ module.exports = {
         avatar: '66px',
         location: '13px',
         mapMobile: '372px',
+        '122px': '122px',
       },
       height: {
         mobile: '206px',
@@ -33,6 +46,7 @@ module.exports = {
         button: '52px',
         mapMobile: '436px',
         contMobile: '236px',
+        '50px': '50px',
       },
       backgroundColor: {
         mobile: '#EFF0F5',
@@ -41,6 +55,7 @@ module.exports = {
         mobile: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       },
       fontSize: {
+        '13px': '13px',
         '16px': '16px',
         '18px': '18px',
         '24px': '24px',
@@ -70,6 +85,7 @@ module.exports = {
         '12px': '12px',
         '17px': '17px',
         '19px': '19px',
+        '22px': '22px',
         '24px': '24px',
         '26px': '26px',
         '32px': '32px',

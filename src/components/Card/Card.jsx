@@ -1,13 +1,8 @@
+import { NavLink } from 'react-router-dom'
+import { getDaysPassed } from '../../services/getDaysPassed'
 import sprite from './../../images/sprite.svg'
 import avatar from './../../images/avatar.png'
 import Star from '../Star/Star'
-import { NavLink } from 'react-router-dom'
-
-const getDaysPassed = (postedDate) => {
-  const endDate = Date.now() / 1000 / 24 / 60 / 60
-  const startDate = Date.parse(postedDate) / 1000 / 24 / 60 / 60
-  return Math.round(endDate - startDate)
-}
 
 const Card = ({ tasks }) => {
   return (

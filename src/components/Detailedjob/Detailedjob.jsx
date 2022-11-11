@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import Container from '../Container'
 import { getTasks } from '../../services/tasksApi'
+import { getDaysPassed } from '../../services/getDaysPassed'
 // import contactsMob from './../../images/contacts_mob.png'
 import sprite from './../../images/sprite.svg'
 
@@ -11,12 +12,13 @@ const Detailedjob = () => {
   const [details, setDetails] = useState({})
   const [description, setDescription] = useState('')
   const [responsopilities, setResponsopilities] = useState('')
-  const [compensation, setCompensation] = useState('')
+  const [compensation, setCompensation] = useState([])
   const [pictures, setPictures] = useState([])
   const [employmenttype, setEmploymenttype] = useState([])
   const [benefits, setBenefits] = useState([])
   const [geolocation, setGeolocation] = useState({})
-  //  AIzaSyBylNKLaUBKxSFmNzBlJA1fZ3xEvkaz8xk
+  const [salary, setSalary] = useState('')
+
   useEffect(() => {
     getTasks()
       .then((data) => {
@@ -30,12 +32,16 @@ const Detailedjob = () => {
             .split('Compensation & Benefits:')[0]
         )
         setCompensation(
-          task[0].description.split('Compensation & Benefits:')[1]
+          task[0].description
+            .split('Compensation & Benefits:')[1]
+            .split('.')
+            .filter((el) => el !== '\n\n')
         )
         setPictures(task[0].pictures)
         setEmploymenttype(task[0].employment_type)
         setBenefits(task[0].benefits)
         setGeolocation(task[0].location)
+        setSalary(task[0].salary.replaceAll('k', ' 000'))
         setDetails(...task)
       })
   }, [id])
@@ -54,15 +60,15 @@ const Detailedjob = () => {
         <h3 className="text-24px font-bold leading-30px mb-5px">
           {details.title}{' '}
         </h3>
-
-        <div className="panelInfo mb-3.5">
-          <p>posted 2 days ago</p>
-          <div className="salaryInfo">
+        <div className="panelInfo mb-3.5 flex justify-between items-center">
+          <p className="text-13px opacity-60 text-detSecText">
+            posted {getDaysPassed(details.createdAt)} days ago
+          </p>
+          <div className="salaryInfo flex flex-col items-end">
             <p>Brutto, per year</p>
-            <p>€ {details.salary}</p>
+            <p className="font-bold text-xl">€ {salary}</p>
           </div>
         </div>
-
         <div className="description text-detSecText">
           <p className="text-18px leading-24px mb-43px">{description}</p>
 
@@ -71,7 +77,18 @@ const Detailedjob = () => {
           <h4 className="font-bold text-xl mb-12px">
             Compensation & Benefits:
           </h4>
-          <p className="text-18px leading-24px mb-43px">{compensation}</p>
+
+          <ul className="text-18px leading-24px mb-43px">
+            {compensation.map((benefit, ind) => {
+              return (
+                <li key={ind} className=" ml-22px list-square">
+                  {benefit}
+                </li>
+              )
+            })}
+          </ul>
+
+          {/* <p className="text-18px leading-24px mb-43px">{compensation}</p> */}
         </div>
         <button className="text-[white] mb-135px text-xs bg-applbutton h-button m-auto w-[127px] flex justify-center items-center rounded-lg">
           {' '}
@@ -95,22 +112,35 @@ const Detailedjob = () => {
         </ul>
         <h3 className="text-28px mb-2.5 font-bold">Additional info</h3>
         <hr className="text-hr opacity-10 mb-24px" />
-        <h4>Employment type</h4>
-        <ul>
-          {' '}
+        <h4 className="text-xl mb-2.5">Employment type</h4>
+        <ul className="mb-5 flex gap-2">
           {employmenttype.map((type, ind) => {
-            return <li key={ind}>{type}</li>
+            return (
+              <li
+                key={ind}
+                className="w-122px h-50px border-solid border border-butEmplTypeBrdr rounded-lg bg-butEmplType text-butEmplTypeTxt flex justify-center items-center font-bold"
+              >
+                {type}
+              </li>
+            )
           })}
         </ul>
-        <h4>Benefits</h4>
-        <ul>
-          {' '}
+
+        <h4 className="text-xl mb-2.5 ">Benefits</h4>
+        <ul className="mb-64px flex justify-start">
           {benefits.map((benefit, ind) => {
-            return <li key={ind}>{benefit}</li>
+            return (
+              <li
+                key={ind}
+                className=" ml-22px px-13px h-50px border-solid border rounded-lg bg-butBeniBg border-butBeniBrdr text-butBeniTxt flex justify-center items-center font-bold"
+              >
+                {benefit}
+              </li>
+            )
           })}
         </ul>
-        <h4>Contacts</h4>
-        <hr />
+        <h4 className="text-28px mb-2.5 font-bold">Contacts</h4>
+        <hr className="text-hr opacity-10 mb-22px" />
         {/* <img src={contactsMob} alt="contacts map" /> */}
         <div className="w-mapMobile h-mapMobile rounded-lg m-auto ">
           <div className="contacts h-contMobile text-geolocation bg-geolocationBg ]">
