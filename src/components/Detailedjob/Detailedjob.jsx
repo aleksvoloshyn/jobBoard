@@ -54,15 +54,16 @@ const Detailedjob = () => {
         </h2>
         <hr className="text-hr opacity-10 mb-24px" />
 
+        {/* user Panel */}
         <ul className="userPanel flex mb-32px">
-          <li className="flex mr-32px">
-            <svg className="starempty w-location h-location ">
-              <use href={`${sprite}#location`} />
+          <li className="flex mr-9 cursor-pointer">
+            <svg className="starempty w-star h-star mr-3 ">
+              <use href={`${sprite}#starempty`} />
             </svg>{' '}
             <p>Save to my list</p>
           </li>
-          <li className="flex">
-            <svg className="share w-location h-location">
+          <li className="flex cursor-pointer">
+            <svg className="share w-share h-share mr-2.5">
               <use href={`${sprite}#share`} />
             </svg>{' '}
             <p>Share</p>
