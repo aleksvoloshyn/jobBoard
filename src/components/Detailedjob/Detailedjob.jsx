@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import Container from '../Container'
 import { getTasks } from '../../services/tasksApi'
 import { getDaysPassed } from '../../services/getDaysPassed'
-// import contactsMob from './../../images/contacts_mob.png'
 import sprite from './../../images/sprite.svg'
 
 const Detailedjob = () => {
@@ -48,14 +47,12 @@ const Detailedjob = () => {
 
   return (
     <Container>
-      <div className="jobDetails pb-37px px-15px pt-24px text-left bg-[white] text-detPrText">
-        <h2 className="font-bold text-28px leading-34.1px mb-12px">
-          Job Details
-        </h2>
-        <hr className="text-hr opacity-10 mb-24px" />
+      <div className="jobDetails pb-9 px-4 pt-6 text-left bg-[white] text-detPrText">
+        <h2 className="font-bold text-3xl leading-9 mb-3">Job Details</h2>
+        <hr className="text-hr opacity-10 mb-6" />
 
         {/* user Panel */}
-        <ul className="userPanel flex mb-32px">
+        <ul className="userPanel flex mb-8">
           <li className="flex mr-9 cursor-pointer">
             <svg className="starempty w-star h-star mr-3 ">
               <use href={`${sprite}#starempty`} />
@@ -70,11 +67,11 @@ const Detailedjob = () => {
           </li>
         </ul>
 
-        <h3 className="text-24px font-bold leading-30px mb-5px">
+        <h3 className="text-2xl font-bold leading-3xl mb-1">
           {details.title}{' '}
         </h3>
         <div className="panelInfo mb-3.5 flex justify-between items-center">
-          <p className="text-13px opacity-60 text-detSecText">
+          <p className="text-xs opacity-60 text-detSecText">
             posted {getDaysPassed(details.createdAt)} days ago
           </p>
           <div className="salaryInfo flex flex-col items-end">
@@ -83,33 +80,29 @@ const Detailedjob = () => {
           </div>
         </div>
         <div className="description text-detSecText">
-          <p className="text-18px leading-24px mb-43px">{description}</p>
+          <p className="text-lg leading-6 mb-11">{description}</p>
 
-          <h4 className="font-bold text-xl mb-12px">Responsopilities: </h4>
-          <p className="text-18px leading-24px mb-43px">{responsopilities}</p>
-          <h4 className="font-bold text-xl mb-12px">
-            Compensation & Benefits:
-          </h4>
+          <h4 className="font-bold text-xl mb-3">Responsopilities: </h4>
+          <p className="text-lg leading-6 mb-11">{responsopilities}</p>
+          <h4 className="font-bold text-xl mb-3">Compensation & Benefits:</h4>
 
-          <ul className="text-18px leading-24px mb-43px">
+          <ul className="text-lg leading-6 mb-11">
             {compensation.map((benefit, ind) => {
               return (
-                <li key={ind} className=" ml-22px list-square">
+                <li key={ind} className=" ml-6 list-square">
                   {benefit}
                 </li>
               )
             })}
           </ul>
-
-          {/* <p className="text-18px leading-24px mb-43px">{compensation}</p> */}
         </div>
-        <button className="text-[white] mb-135px text-xs bg-applbutton h-button m-auto w-[127px] flex justify-center items-center rounded-lg">
+        <button className="text-[white] mb-32 text-xs bg-applbutton h-button m-auto w-32 flex justify-center items-center rounded-lg">
           {' '}
           APPLY NOW
         </button>
-        <h3 className="text-28px mb-2.5 font-bold">Attached images</h3>
+        <h3 className="text-3xl mb-2.5 font-bold">Attached images</h3>
         <hr className=" mb-2.5 text-hr opacity-10" />
-        <ul className="flex justify-between gap-2 mb-64px ">
+        <ul className="flex justify-between gap-2 mb-16 ">
           {pictures.map((pic, ind) => {
             return (
               <li key={ind}>
@@ -123,15 +116,15 @@ const Detailedjob = () => {
             )
           })}
         </ul>
-        <h3 className="text-28px mb-2.5 font-bold">Additional info</h3>
-        <hr className="text-hr opacity-10 mb-24px" />
+        <h3 className="text-3xl mb-2.5 font-bold">Additional info</h3>
+        <hr className="text-hr opacity-10 mb-6" />
         <h4 className="text-xl mb-2.5">Employment type</h4>
         <ul className="mb-5 flex gap-2">
           {employmenttype.map((type, ind) => {
             return (
               <li
                 key={ind}
-                className="w-122px h-50px border-solid border border-butEmplTypeBrdr rounded-lg bg-butEmplType text-butEmplTypeTxt flex justify-center items-center font-bold"
+                className="w-32 h-12 border-solid border border-butEmplTypeBrdr rounded-lg bg-butEmplType text-butEmplTypeTxt flex justify-center items-center font-bold"
               >
                 {type}
               </li>
@@ -140,25 +133,25 @@ const Detailedjob = () => {
         </ul>
 
         <h4 className="text-xl mb-2.5 ">Benefits</h4>
-        <ul className="mb-64px flex justify-start">
+        <ul className="mb-16 flex justify-start">
           {benefits.map((benefit, ind) => {
             return (
               <li
                 key={ind}
-                className=" mr-5px px-13px h-50px border-solid border rounded-lg bg-butBeniBg border-butBeniBrdr text-butBeniTxt flex justify-center items-center font-bold"
+                className=" mr-1.5 px-3.5 h-14 border-solid border rounded-lg bg-butBeniBg border-butBeniBrdr text-butBeniTxt flex justify-center items-center font-bold"
               >
                 {benefit}
               </li>
             )
           })}
         </ul>
-        <h4 className="text-28px mb-2.5 font-bold">Contacts</h4>
-        <hr className="text-hr opacity-10 mb-22px" />
+        <h4 className="text-3xl mb-2.5 font-bold">Contacts</h4>
+        <hr className="text-hr opacity-10 mb-5" />
         {/* <img src={contactsMob} alt="contacts map" /> */}
         <div className="w-mapMobile   m-auto ">
-          <div className="contacts h-contMobile text-geolocation bg-geolocationBg pt-32px pl-62px rounded-t-xl">
+          <div className="contacts h-contMobile text-geolocation bg-geolocationBg pt-8 pl-16 rounded-t-xl">
             <p className="font-bold"> Department name.</p>{' '}
-            <p className="font-bold mb-17px"> {details.name}</p>
+            <p className="font-bold mb-4"> {details.name}</p>
             <span className="address flex mb-1.5">
               <svg className="w-location h-location mr-2.5">
                 <use href={`${sprite}#location`} />

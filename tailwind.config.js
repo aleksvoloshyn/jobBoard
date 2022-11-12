@@ -34,7 +34,6 @@ module.exports = {
       },
       width: {
         mobile: '396px',
-
         location: '13px',
         share: '18px',
         star: '20px',
