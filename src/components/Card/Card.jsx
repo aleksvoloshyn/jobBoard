@@ -6,25 +6,29 @@ import Star from '../Star/Star'
 
 const Card = ({ tasks }) => {
   return (
-    <ul className="jobItem contents font-sans bg-mobile rounded-lg drop-shadow-mobile h-mobile mb-2 px-4 pb-27px">
+    <ul className="jobItem contents font-sans bg-mobile rounded-lg drop-shadow-mobile h-mobile mb-2 px-4 pb-7">
       {tasks.map((task) => {
         return (
           <li
             key={task.id}
-            className="jobItem flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-2 px-4 pb-27px"
+            className="jobItem flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-2 px-4 pb-7"
           >
-            <div className="left pt-54px mr-19px">
+            {/* left side of the card */}
+            <div className="left pt-14 mr-5">
               <img
                 src={avatar}
                 alt="avatar"
-                className="h-avatar  rounded-[50%]
+                className="h-avatarMob  rounded-full 
            "
                 style={{ minWidth: '66px' }}
               />
             </div>
-            <div className="right  pt-17px ">
-              <div className="top flex justify-between items-baseline mb-17px">
-                <div className="flex mr-90px">
+
+            {/* right side of the card */}
+            <div className="right  pt-4 ">
+              {/* raiting & posted days ago */}
+              <div className="top flex justify-between items-baseline mb-4">
+                <div className="flex ">
                   <Star />
                   <Star />
                   <Star />
@@ -35,16 +39,18 @@ const Card = ({ tasks }) => {
                   Posted {getDaysPassed(task.createdAt)} days ago
                 </div>
               </div>
-              <h1 className="font-normal text-18px leading-24px  text-left mb-5px">
+              {/* title */}
+              <h1 className="font-normal text-lg leading-6  text-left mb-1.5">
                 <NavLink to={`${task.id}`}>{task.title}</NavLink>
               </h1>
-              <p className="text-left text-base text-18px leading-25px text-secondary mb-7px">
+              {/* text */}
+              <p className="text-left  text-lg leading-6 text-secondary mb-2">
                 {task.name} •{' '}
                 {task.benefits.map((benifit) => {
                   return benifit + ' '
                 })}
               </p>
-
+              {/* adress */}
               <div className="flex items-center">
                 {' '}
                 <svg className="w-location h-location mr-2">

@@ -34,16 +34,17 @@ module.exports = {
       },
       width: {
         mobile: '396px',
-        avatar: '66px',
+
         location: '13px',
         share: '18px',
         star: '20px',
         mapMobile: '372px',
         '122px': '122px',
       },
+
       height: {
         mobile: '206px',
-        avatar: '66px',
+        avatarMob: '66px',
         share: '20px',
         location: '18px',
         star: '20px',
