@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from '../Container'
+import Button from '../Button'
 import Loader from '../Loader'
 import { getTasks } from '../../services/tasksApi'
 import { getDaysPassed } from '../../services/getDaysPassed'
@@ -103,10 +104,9 @@ const Detailedjob = () => {
               })}
             </ul>
           </div>
-          <button className="text-[white] mb-32 text-xs bg-applbutton h-button m-auto w-32 flex justify-center items-center rounded-lg">
-            {' '}
-            APPLY NOW
-          </button>
+
+          <Button title={'APPLY NOW'} />
+
           <h3 className="text-3xl mb-2.5 font-bold">Attached images</h3>
           <hr className=" mb-2.5 text-hr opacity-10" />
           <ul className="flex justify-between gap-2 mb-16 ">

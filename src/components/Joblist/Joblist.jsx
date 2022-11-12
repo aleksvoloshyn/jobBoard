@@ -1,7 +1,7 @@
 import { getTasks } from '../../services/tasksApi'
 import { useEffect, useState } from 'react'
 import Container from '../Container'
-import Card from '../Card'
+import Cards from '../Cards'
 import Paginator from '../Paginator'
 import Loader from '../Loader'
 
@@ -25,7 +25,7 @@ const Joblist = () => {
           <Loader />
         ) : (
           <>
-            <Card tasks={tasks} />
+            <Cards tasks={tasks} />
             <Paginator />
           </>
         )}

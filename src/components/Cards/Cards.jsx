@@ -4,7 +4,7 @@ import sprite from './../../images/sprite.svg'
 import avatar from './../../images/avatar.png'
 import Star from '../Star/Star'
 
-const Card = ({ tasks }) => {
+const Cards = ({ tasks }) => {
   return (
     <ul className="jobItem contents font-sans bg-mobile rounded-lg drop-shadow-mobile h-mobile mb-2 px-4 pb-7">
       {tasks.map((task) => {
@@ -66,4 +66,4 @@ const Card = ({ tasks }) => {
   )
 }
 
-export default Card
+export default Cards
