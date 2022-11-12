@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-
 import Container from '../Container'
+import Loader from '../Loader'
 import { getTasks } from '../../services/tasksApi'
 import { getDaysPassed } from '../../services/getDaysPassed'
 import sprite from './../../images/sprite.svg'
@@ -51,7 +51,9 @@ const Detailedjob = () => {
 
   return (
     <Container>
-      {!isLoading && (
+      {isLoading ? (
+        <Loader />
+      ) : (
         <div className="jobDetails pb-9 px-4 pt-6 text-left bg-[white] text-detPrText">
           <h2 className="font-bold text-3xl leading-9 mb-3">Job Details</h2>
           <hr className="text-hr opacity-10 mb-6" />
