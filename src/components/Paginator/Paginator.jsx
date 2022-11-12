@@ -1,25 +1,25 @@
+import { v4 as uuidv4 } from 'uuid'
+
 const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
 const Paginator = () => {
   return (
     <div className="flex">
-      <ul className=" flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-17px mt-26px px-4 py-9px w-[100%] justify-center">
-        {pages.map((page, ind) => {
+      <ul className=" flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-6 mt-26px px-4 py-2 w-full justify-center">
+        {pages.map((page) => {
           return (
             page <= 5 && (
               <li
-                key={ind}
-                className="mr-4 text-16px leading-19px font-[700] text-pages cursor-pointer"
+                key={uuidv4()}
+                className="text-pages mr-4 text-4 leading-5 font-bold  cursor-pointer"
               >
                 {page}
               </li>
             )
           )
         })}
-        <li className="mr-4 text-16px leading-19px font-[700] text-pages ">
-          ...
-        </li>
-        <li className="mr-4 text-16px leading-19px font-[700] text-pages cursor-pointer">
+        <li className="text-pages mr-4 text-4 leading-5 font-bold ">...</li>
+        <li className="text-pages mr-4 text-4 leading-5 font-bold  cursor-pointer">
           {pages[pages.length - 1]}
         </li>
       </ul>
