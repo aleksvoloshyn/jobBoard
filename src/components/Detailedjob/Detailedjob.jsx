@@ -55,7 +55,6 @@ const Detailedjob = () => {
 
   return (
     <div className="bg-[white] pb-60">
-      {' '}
       <Container>
         {isLoading ? (
           <Loader />
