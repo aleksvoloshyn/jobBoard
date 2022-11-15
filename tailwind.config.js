@@ -44,8 +44,11 @@ module.exports = {
         share: '18px',
         star: '20px',
         mapMobile: '372px',
+        contDesktop: '402px',
         '515px': '515px',
       },
+
+      border: { hr: '#3A4562' },
 
       height: {
         mobile: '206px',
@@ -58,6 +61,7 @@ module.exports = {
         button: '52px',
         mapMobile: '436px',
         contMobile: '206px',
+        contDesktop: '436px',
         googleMobile: '230px',
       },
       margin: {

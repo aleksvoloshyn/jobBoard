@@ -1,5 +1,8 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
+<symbol id="arrleftbutton" viewBox="0 0 18 32">
+<path fill="#384564" style="fill: var(--color1, #384564)" d="M17.174 0.713c0.83 0.914 0.796 2.362-0.076 3.231l-11.103 11.52c-0.286 0.29-0.286 0.777 0 1.067l11.109 11.52c0.87 0.868 0.901 2.316 0.070 3.23-0.831 0.93-2.21 0.96-3.078 0.076l-13.401-13.638c-0.898-0.914-0.93-2.408-0.071-3.352l13.472-13.73c0.87-0.884 2.249-0.838 3.078 0.076z"></path>
+</symbol>
 <symbol id="arrowleft" viewBox="0 0 32 32">
 <path fill="#3a4562" style="fill: var(--color1, #3a4562)" opacity="0.497652" d="M18.662 2.69c-1.47-1.47-3.854-1.47-5.324 0l-10.648 10.648c-1.47 1.47-1.47 3.854 0 5.324l10.648 10.648c1.47 1.47 3.854 1.47 5.324 0s1.47-3.854 0-5.324l-7.986-7.986 7.986-7.986c1.47-1.47 1.47-3.854 0-5.324z"></path>
 <path fill="#7d859c" style="fill: var(--color2, #7d859c)" opacity="0.497652" ></path>

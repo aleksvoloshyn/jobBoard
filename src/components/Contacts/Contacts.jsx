@@ -19,7 +19,7 @@ const Contacts = ({ name, address, email, phone, lat, long, widthClass }) => {
         <img
           src={`https://maps.googleapis.com/maps/api/staticmap?center=${lat},${long}&zoom=12&size=372x230&maptype=roadmap&key=AIzaSyASyHvDC7SCL7RencmuMJd68Zfz_InZYTw`}
           alt="location"
-          className="opacity-40"
+          className="opacity-40 "
         />
       </div>
     </div>

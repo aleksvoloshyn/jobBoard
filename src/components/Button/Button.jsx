@@ -1,6 +1,8 @@
-const Button = ({ title }) => {
+const Button = ({ title, margB, displayMob, displayDesk, marginx }) => {
   return (
-    <button className="text-[white] mb-32 text-xs bg-applbutton h-button m-auto w-32 flex justify-center items-center rounded-lg">
+    <button
+      className={`text-[white]  mobile:mx-${marginx} mb-${margB} text-xs bg-applbutton h-button   w-32 mobile:${displayMob} desktop:${displayDesk} flex justify-center items-center rounded-lg`}
+    >
       {title}
     </button>
   )
