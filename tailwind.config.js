@@ -60,6 +60,9 @@ module.exports = {
         contMobile: '206px',
         googleMobile: '230px',
       },
+      margin: {
+        inh: 'inherit',
+      },
       backgroundColor: {
         mobile: '#EFF0F5',
       },
