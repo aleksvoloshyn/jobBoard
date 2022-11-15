@@ -4,6 +4,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      mobile: '396px',
+      desktop: '1400px',
+    },
     colors: {},
     listStyleType: {
       none: 'none',
@@ -34,17 +38,22 @@ module.exports = {
       },
       width: {
         mobile: '396px',
+        desktop: '1400px',
         location: '13px',
+        bookmark: '24px',
         share: '18px',
         star: '20px',
         mapMobile: '372px',
+        '515px': '515px',
       },
 
       height: {
         mobile: '206px',
         avatarMob: '66px',
+        avatarDesktop: '85px',
         share: '20px',
         location: '18px',
+        bookmark: '24px',
         star: '20px',
         button: '52px',
         mapMobile: '436px',

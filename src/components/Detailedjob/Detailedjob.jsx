@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Container from '../Container'
+import Contacts from '../Contacts'
 import Button from '../Button'
 import Loader from '../Loader'
 import { getTasks } from '../../services/tasksApi'
@@ -155,28 +156,15 @@ const Detailedjob = () => {
           <h4 className="text-3xl mb-2.5 font-bold">Contacts</h4>
           <hr className="text-hr opacity-10 mb-5" />
           {/* <img src={contactsMob} alt="contacts map" /> */}
-          <div className="w-mapMobile   m-auto ">
-            <div className="contacts h-contMobile text-geolocation bg-geolocationBg pt-8 pl-16 rounded-t-xl">
-              <p className="font-bold"> Department name.</p>{' '}
-              <p className="font-bold mb-4"> {details.name}</p>
-              <span className="address flex mb-1.5">
-                <svg className="w-location h-location mr-2.5">
-                  <use href={`${sprite}#location`} />
-                </svg>
-                <p>{details.address}</p>
-              </span>
-              <p className="mr-2.5">{details.phone}</p>
-              <p>{details.email}</p>
-            </div>
-
-            <div className="bg-geolocationBg h-googleMobile rounded-b-xl">
-              <img
-                src={`https://maps.googleapis.com/maps/api/staticmap?center=${geolocation.lat},${geolocation.long}&zoom=12&size=372x230&maptype=roadmap&key=AIzaSyASyHvDC7SCL7RencmuMJd68Zfz_InZYTw`}
-                alt="location"
-                className="opacity-20"
-              />
-            </div>
-          </div>
+          <Contacts
+            name={details.name}
+            address={details.address}
+            email={details.email}
+            phone={details.phone}
+            lat={geolocation.lat}
+            long={geolocation.long}
+            widthClass={'w-mapMobile m-auto'}
+          />
         </div>
       )}
     </Container>
