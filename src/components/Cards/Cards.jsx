@@ -6,15 +6,15 @@ import Star from '../Star/Star'
 
 const Cards = ({ tasks }) => {
   return (
-    <ul className="jobItems contents font-sans bg-mobile rounded-lg drop-shadow-mobile h-mobile mb-2 px-4 pb-7 ">
+    <ul className="jobItems contents font-sans bg-mobile rounded-lg drop-shadow-mobile h-mobile mb-2 px-4 pb-7  ">
       {tasks.map((task) => {
         return (
           <li
             key={task.id}
-            className="jobItem flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-2 px-4 pb-7"
+            className="jobItem flex font-sans bg-mobile rounded-lg drop-shadow-mobile  mb-2 px-4 pb-7 "
           >
             {/* left side of the card */}
-            <div className="left pt-14 mr-5 desktop:mr-7 desktop:pt-5">
+            <div className="left pt-14 mr-5 desktop:mr-7 desktop:pt-5 ">
               <img
                 src={avatar}
                 alt="avatar"
@@ -24,7 +24,7 @@ const Cards = ({ tasks }) => {
             </div>
 
             {/* right side of the card */}
-            <div className="right  pt-4 flex flex-col desktop:flex-row-reverse desktop:w-full desktop:justify-between">
+            <div className="right  pt-4 flex flex-col desktop:flex-row-reverse desktop:w-full desktop:justify-between ">
               {/* raiting & posted days ago */}
               <div className="top flex justify-between items-baseline mb-4 desktop:items-center desktop:mb-0 ">
                 <div className="flex desktop:mr-8 ">
