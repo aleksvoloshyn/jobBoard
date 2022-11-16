@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import sprite from './../../images/sprite.svg'
 const Contacts = ({ name, address, email, phone, lat, long, widthClass }) => {
   return (
@@ -24,6 +25,16 @@ const Contacts = ({ name, address, email, phone, lat, long, widthClass }) => {
       </div>
     </div>
   )
+}
+
+Contacts.propTypes = {
+  tasks: PropTypes.array,
+  address: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  lat: PropTypes.number,
+  long: PropTypes.number,
+  widthClass: PropTypes.string,
 }
 
 export default Contacts

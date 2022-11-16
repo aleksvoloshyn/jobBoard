@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 import { getDaysPassed } from '../../services/getDaysPassed'
 import sprite from './../../images/sprite.svg'
 import avatar from './../../images/avatar.png'
@@ -69,5 +71,7 @@ const Cards = ({ tasks }) => {
     </ul>
   )
 }
-
+Cards.propTypes = {
+  tasks: PropTypes.array,
+}
 export default Cards
