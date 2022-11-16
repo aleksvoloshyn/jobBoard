@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Button = ({ title, margB, displayMob, displayDesk, marginx }) => {
   return (
     <button
@@ -6,6 +8,10 @@ const Button = ({ title, margB, displayMob, displayDesk, marginx }) => {
       {title}
     </button>
   )
+}
+
+Button.propTypes = {
+  title: PropTypes.string,
 }
 
 export default Button
